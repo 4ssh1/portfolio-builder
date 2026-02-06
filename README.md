@@ -40,8 +40,8 @@ To get started, follow these steps:
 
 1. Clone the repository:
    ```bash
-     git clone https://github.com/4ssh1/Jodna-portfolio-project-backend.git
-     cd Jodna-portfolio-project-backend
+     https://github.com/4ssh1/portfolio-builder.git
+     cd portfolio-builder
    ```
    
 
