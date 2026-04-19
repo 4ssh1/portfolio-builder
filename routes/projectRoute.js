@@ -89,23 +89,31 @@ module.exports = projectRouter
  *         application/json:
  *           schema:
  *             type: object
- *             properties:
- *               title:
- *                 type: string
- *               description:
- *                 type: string
- *               githubLink:
- *                 type: string
- *               liveLink:
- *                 type: string
- *               category:
- *                 type: string
- *               technologies:
- *                 type: array
- *                 items:
- *                   type: string
- *               isDraft:
- *                 type: boolean
+*             required:
+*               - title
+*               - category
+*               - githubLink
+*               - technologies
+*               - description
+*             properties:
+*               title:
+*                 type: string
+*               description:
+*                 type: string
+*               githubLink:
+*                 type: string
+*               liveLink:
+*                 type: string
+*               category:
+*                 type: string
+*               technologies:
+*                 type: array
+*                 items:
+*                   type: string
+*               bio:
+*                 type: string
+*               isDraft:
+*                 type: boolean
  *     responses:
  *       200:
  *         description: Project updated successfully

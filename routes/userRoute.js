@@ -63,9 +63,12 @@ module.exports = userRouter
  *         application/json:
  *           schema:
  *             type: object
- *             properties:
- *               subscriberId:
- *                 type: string
+*             required:
+*               - email
+*             properties:
+*               email:
+*                 type: string
+*                 format: email
  *     responses:
  *       200:
  *         description: Subscriber added successfully

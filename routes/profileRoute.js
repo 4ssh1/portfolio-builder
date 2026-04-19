@@ -76,14 +76,21 @@ module.exports = profileRouter
  *         application/json:
  *           schema:
  *             type: object
- *             properties:
- *               name:
- *                 type: string
- *               email:
- *                 type: string
- *               bio:
- *                 type: string
- *               # Add other updatable fields here
+*             required:
+*               - firstname
+*               - lastname
+*               - email
+*             properties:
+*               firstname:
+*                 type: string
+*               lastname:
+*                 type: string
+*               email:
+*                 type: string
+*                 format: email
+*               bio:
+*                 type: string
+*               # Add other updatable fields here
  *     responses:
  *       200:
  *         description: User profile updated successfully

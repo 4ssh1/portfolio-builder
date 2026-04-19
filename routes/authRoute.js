@@ -63,17 +63,20 @@ module.exports = authRouter
  *           schema:
  *             type: object
  *             required:
- *               - name
- *               - email
- *               - password
- *             properties:
- *               name:
- *                 type: string
- *               email:
- *                 type: string
- *                 format: email
- *               password:
- *                 type: string
+*               - firstname
+*               - lastname
+*               - email
+*               - password
+*             properties:
+*               firstname:
+*                 type: string
+*               lastname:
+*                 type: string
+*               email:
+*                 type: string
+*                 format: email
+*               password:
+*                 type: string
  *     responses:
  *       201:
  *         description: User registered successfully
