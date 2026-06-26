@@ -1,0 +1,44 @@
+services:
+# database
+  mongodb-prod:
+    image: mongo:latest
+    container_name: mongodb-prod
+    ports:
+      - "2702:2701"
+    env_file:
+      - .env
+    volumes:
+    # perssist branch metadata per git branch
+      - ./data/mongodb-prod:/data/db
+      - ./.git/HEAD:/tmp/.git/HEAD:ro,consistent
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - portfolio-builder
+# nodeJS application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: portfolio-builder-app
+    ports:
+      - "${PORT:-3001}:3000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      mongodb-prod:
+        condition: service_healthy
+    networks:
+      - portfolio-builder
+    restart: unless-stopped
+
+networks:
+  portfolio-builder:
+    driver: bridge

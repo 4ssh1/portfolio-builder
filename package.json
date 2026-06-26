@@ -1,16 +1,18 @@
 {
-  "name": "jodnatech",
+  "name": "portfolio-builder",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon app.js",
-    "dev": "node --trace-warnings app.js",
+    "start": "node app.js", 
+    "dev": "nodemon --trace-warnings app.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "dev:docker": "sh ./scripts/dev.sh",
+    "prod:docker": "sh ./scripts/prod.sh"
   },
   "keywords": [],
   "author": "",

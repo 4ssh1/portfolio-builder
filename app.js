@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cookie = require('cookie-parser');
@@ -8,7 +7,8 @@ const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swagger/swagger');
 
-// 🆕 Import socket setup function
+const config = require('./config');
+
 const setupSocket = require('./services/socket');
 
 const userRoutes = require('./routes/userRoute');
@@ -16,7 +16,7 @@ const profileRoutes = require('./routes/profileRoute');
 const projectRoutes = require('./routes/projectRoute');
 const authRouter = require('./routes/authRoute');
 
-const PORT = process.env.PORT;
+const PORT = config.PORT;
 const app = express();
 const server = http.createServer(app);
 
@@ -51,7 +51,7 @@ app.use((req, res) => {
   });
 });
 
-mongoose.connect(process.env.DATABASE_URL || "mongodb://localhost:27017/portfolio")
+mongoose.connect(config.DATABASE_URL || "mongodb://localhost:27017/portfolio")
   .then(() => {
     console.log("DB connected successfully");
     server.listen(PORT, () => {
