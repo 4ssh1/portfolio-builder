@@ -8,7 +8,7 @@ You need to have Docker Desktop or the Docker Engine installed and running on yo
 **Development Environment**
 The development setup runs the Node.js application using nodemon for automatic reloads and spins up a local MongoDB instance. 
 
-Create a `.env.dev` file in the root of the project. Ensure your database connection string points to the internal Docker network. For example: `DATABASE_URL="mongodb://mongodb-local:27017/portfolio_dev"`. 
+Create a `.env.dev` file in the root of the project. Ensure your database connection string points to the internal Docker network. For example: `DATABASE_URL="mongodb://mongodb-local:2701/portfolio_dev"`. 
 
 To start the development environment, make sure your bash scripts have execution permissions, then run the dev script. You can do this via npm:
 `npm run dev:docker`
