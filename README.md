@@ -7,6 +7,10 @@
 A portfolio builder that allows users to register, upload projects, showcase skills, track profile views, and receive updates via newsletters.
 
 ---
+## Important Docs
+- [Workflows](./README-GITHUB-WORKFLOWS.md)
+- [Docker](./README-DOCKER.md)
+---
 
 ## 🚀 Tech Stack
 
