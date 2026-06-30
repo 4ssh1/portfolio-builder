@@ -1,4 +1,4 @@
-# portfolio-builder Docker Guide
+# Portfolio-builder Docker Guide
 
 This guide explains how to run the portfolio-builder backend and database using Docker. We use a multi-stage build to separate the development and production environments. 
 
